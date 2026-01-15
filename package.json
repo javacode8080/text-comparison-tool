@@ -1,0 +1,20 @@
+{
+  "name": "text-comparison-tool",
+  "version": "1.0.0",
+  "description": "基于Vue 2的文本对比工具，使用Myers Diff算法",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "vue": "^2.6.14",
+    "diff": "^5.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^4.5.19",
+    "@babel/core": "^7.12.0",
+    "@babel/preset-env": "^7.12.0",
+    "babel-loader": "^8.2.0"
+  }
+}

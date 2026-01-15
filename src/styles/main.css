@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+header .description {
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+.comparison-container {
+  display: flex;
+  gap: 20px;
+  height: 600px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* 移除 overflow: hidden，让子元素自己处理滚动 */
+  overflow: hidden;  /* 保持 hidden 用于圆角裁剪 */
+}
+
+.file-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e0e0e0;
+  min-width: 0;
+  overflow: hidden;  /* 关键：圆角裁剪 */
+}
+
+.file-area:last-child {
+  border-right: none;
+}
+
+.file-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;  /* 防止被压缩 */
+}
+
+.file-name {
+  font-weight: 600;
+  color: #2c3e50;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.stats {
+  text-align: center;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #555;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stats strong {
+  color: #2c3e50;
+}
+
+.sync-scroll {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #666;
+}
+
+.sync-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-color {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.legend-color.added {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.legend-color.removed {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.legend-color.modified {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.legend-color.unchanged {
+  background-color: transparent;
+  border: 1px solid #ddd;
+}

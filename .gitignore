@@ -39,6 +39,8 @@ build/
 .vscode/
 !**/dist/
 !**/node_modules/
+/dist/
+/node_modules/
 ### macOS ###
 .DS_Store
 /invoice-frontend/dist
